@@ -2,6 +2,7 @@ package com.mocktest.springtest.service;
 
 import com.mocktest.springtest.model.Book;
 import com.mocktest.springtest.repository.BookRepository;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -11,6 +12,7 @@ import java.util.Optional;
 import java.util.concurrent.atomic.AtomicReference;
 
 @Service
+@Slf4j
 public class BookService {
     private final BookRepository bookRepository;
 
@@ -41,6 +43,15 @@ public class BookService {
             }
         } catch (Exception e) {
             // Handle the exception or log it here
+            return null;
+        }
+    }
+
+    public List<Book> getBooksByAuthor(String author) {
+        try {
+            return bookRepository.findAllByAuthorName(author);
+        } catch (Exception e) {
+            System.out.println(e.toString());
             return null;
         }
     }

@@ -4,6 +4,7 @@ import com.mocktest.springtest.model.Author;
 import com.mocktest.springtest.model.Book;
 import com.mocktest.springtest.service.AuthorService;
 import com.mocktest.springtest.service.BookService;
+import jakarta.websocket.server.PathParam;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -35,6 +36,12 @@ public class BookController {
     public Book getBookById(@PathVariable int id) {
         return bookService.getBookById(id);
     }
+
+    @GetMapping("/getBooksByAuthor/{author}")
+    public List<Book> getBooksByAuthor(@PathParam("author") String author) {
+        return bookService.getBooksByAuthor(author);
+    }
+
 
     @PostMapping("/addBook")
     public String saveBook(@RequestBody Book book) {
