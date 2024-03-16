@@ -50,7 +50,7 @@ class BookServiceTest {
     
     @Test
     @Tag("unit")
-    @DisplayName("get books test")
+    @DisplayName("get books test after auto run")
     public void getbookstest(){
         when(bookRepository.findAll()).thenReturn(Stream.of(new Book(451,"bookname1","bookauthor1"),
                 new Book(452,"bookname2","bookauthor2")).collect(Collectors.toList()));
