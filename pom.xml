@@ -69,7 +69,7 @@
 				<version>3.0.0-M4</version> <!-- You can specify the version you need -->
 			</plugin>
 		</plugins>
-		<finalName>spring-test-devops</finalName>
+		<finalName>springtest-devops</finalName>
 	</build>
 
 </project>
