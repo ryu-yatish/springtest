@@ -41,11 +41,11 @@ class BookServiceTest {
 
     @BeforeAll
     public static void beforeAll(){
-        System.out.println("-------------------Starting Tests----------------");
+        System.out.println("-------------------Starting Tests for master env----------------");
     }
     @AfterAll
     public static void AfterAll(){
-        System.out.println("-------------------Ending Tests----------------");
+        System.out.println("-------------------Ending Tests for master env----------------");
     }
     @Test
     @Tag("unit")
